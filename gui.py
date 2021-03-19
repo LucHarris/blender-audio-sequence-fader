@@ -1,3 +1,5 @@
+import bpy
+
 class FaderPanel(bpy.types.Panel):
     """A Sequence Editor Panel for fading audio sequences."""
     bl_label =  "Audio Fading"
@@ -14,3 +16,5 @@ class FaderPanel(bpy.types.Panel):
         layout = self.layout
 
         layout.label(text = "Active Channel: " + str(context.scene.sequence_editor.active_strip.channel))
+        layout.operator("sequencer.audio_sequence_fader", text = "Fade Channel") # bl_idname from operators
+

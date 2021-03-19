@@ -1,3 +1,4 @@
+import bpy
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
@@ -15,11 +16,11 @@ bl_info = {
     "name" : "AudioSequenceFader",
     "author" : "Luc",
     "description" : "",
-    "blender" : (2, 80, 0),
+    "blender" : (2, 90, 0),
     "version" : (0, 0, 1),
     "location" : "",
     "warning" : "",
-    "category" : "Generic"
+    "category" : "Sequencer"
 }
 
 from . operators    import  AudioSequenceFader

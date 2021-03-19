@@ -1,11 +1,13 @@
+import bpy
+
+def sortByStartFrame(e):
+        return e.frame_start + e.frame_offset_start
+
 class AudioSequenceFader(bpy.types.Operator):
     """A Sequence Editor Panel for fading audio sequences."""
     bl_idname = "sequencer.audio_sequence_fader" # refer to in gui.py layout 
     bl_label = "Audio Sequence Fader" 
-
-
-    def sortByStartFrame(e):
-        return e.frame_start + e.frame_offset_start
+    bl_info = "A Sequence Editor Panel for fading audio sequences."
 
     def execute(self,context):
         # todo add variables to gui
@@ -26,9 +28,9 @@ class AudioSequenceFader(bpy.types.Operator):
             if (strip.channel == channel):
                 if(strip.type == "SOUND"):
                     channelStrips.append(strip)
-
+        
         # slope effect
-        channelStrips.sort(key=SortByStartFrame)
+        channelStrips.sort(key=sortByStartFrame)
 
         for i,s in enumerate(channelStrips):
             # offset channel 
